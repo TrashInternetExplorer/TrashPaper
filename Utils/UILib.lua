@@ -1437,20 +1437,22 @@ function Library:text(options)
         Text = ""
     }, options)
 
-	local textContainer = self.container:object("TextLabel", {
+	local textContainer = self.container:object("TextButton", {
 		Theme = {BackgroundColor3 = "Secondary"},
 		Size = UDim2.new(1, -20, 0, 52)
 	}):round(7)
 
 	local text = textContainer:object("TextLabel", {
 		BackgroundTransparency = 1,
-		Position = UDim2.fromOffset(10, (options.Description and 5) or 0),
-		Size = (options.Description and UDim2.new(0.5, -10, 0, 22)) or UDim2.new(0.5, -10, 1, 0),
+		Position = UDim2.fromOffset(10, 0),
+		Size = UDim2.new(0.5, -10, 1, 0),
 		Text = options.Text,
 		TextSize = 22,
 		Theme = {TextColor3 = "StrongText"},
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
+
+	self:_resize_tab()
 
 	local methods = {}
 
