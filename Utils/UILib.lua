@@ -359,11 +359,6 @@ function Library:create(options)
         Theme = "Dark"
     }
 
-    print("-- InternetExplorer UI --")
-    print("By PaperHub")
-    print("Inspired By Mercury UI")
-    print("--------------------------")
-
     if readfile and writefile and isfile then
         if not isfile("IESettings.json") then
             writefile("IESettings.json", HttpService:JSONEncode(settings))
